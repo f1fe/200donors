@@ -18,9 +18,7 @@
       <% else %>
       <div class="giftbox">
         <div class="vertical-aligned">
-          <form action="/charge" method="post">
-            <button type="submit" class="donation-button" style="visibility: visible;" data-amount="<%= donation.amount*100 %>" data-id="<%= donation.id %>">$<%= donation.amount %></button>
-          </form>
+            <button id="donation-button-<%= donation.id %>" class="donation-button" style="visibility: visible;" data-amount="<%= donation.amount*100 %>" data-id="<%= donation.id %>">$<%= donation.amount %></button>
         </div>
       </div>
       <% end %>
@@ -37,33 +35,33 @@
     </div>
   </div>
 
-  <script>
-    $('.giftbox').on('click', 'button', function(e) {
-      e.preventDefault();
-      $this = $(this);
+  <script type="text/javascript">
+      var stripe = Stripe('<%= settings.publishable_key %>');
+      var donationButtons = document.getElementsByClassName("donation-button");
 
-      var handler = StripeCheckout.configure({
-        key: '<%= settings.publishable_key %>',
-        name: "Great Outdoor Adventure Trips",
-        image: 'img/160x160.jpg',
-        allowRememberMe: 'false',
-        billingAddress: 'true',
-        amount: $this.data('amount'),
-        closed: function() {
-        },
-        token: function(token) {
-          $.post( "/charge", {
-            token_id: token.id,
-            donation_id: $this.data('id'),
-            email: token.email
-          }).done(function() {
-            window.location.href = "/thanks";
-          }).fail(function() {
-            alert( "Sorry! There was an error processing your donation." );
+      for(var i = 0; i < donationButtons.length; i++) {
+        donationButtons[i].addEventListener('click', function() {
+          var url = `/checkout?donation_id=${this.dataset.id}`;
+          fetch(url, {
+            method: 'POST'
+          })
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(session) {
+            return stripe.redirectToCheckout({ sessionId: session.id });
+          })
+          .then(function(result) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, you should display the localized error message to your
+            // customer using `error.message`.
+            if (result.error) {
+              alert(result.error.message);
+            }
+          })
+          .catch(function(error) {
+            console.error('Error:', error);
           });
-        }
-      });
-
-      handler.open();
-    });
-  </script>
+        });
+      }
+    </script>
