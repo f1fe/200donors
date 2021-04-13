@@ -22,16 +22,9 @@ header.main-header .row .right {
   vertical-align: middle;
 }
 
-header.main-header img {
-  max-height: 400px;
-}
-
-.full-img {
-  background-image: url('/img/grow.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  max-width: 400px;
+header img {
+  max-height: 500px;
+  padding: 2em;
 }
 
 .row .left {
