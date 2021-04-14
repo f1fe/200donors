@@ -12,7 +12,7 @@ body {
 header.main-header {
   bottom: 0;
   padding: 60px 0;
-  color: #00a5a5;
+  color: #18a68e;
   position: relative;
 }
 
@@ -48,8 +48,8 @@ h1 {
   font-weight: 900;
   text-align: center;
   margin-bottom: 30px;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   padding: 0 30px;
+  color: #104577;
 
   flex-basis: 100%;
 }
@@ -57,11 +57,11 @@ h1 {
 .description {
   max-width: 700px;
   margin: 0 auto;
-  font-size: 21px;
+  font-size: 32px;
+  color: gray;
 
-  line-height: 28px;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  padding: 0 40px;
+  line-height: 33px;
+  padding-bottom: 30px;
 
   flex: 1;
   min-width: 400px;
@@ -73,7 +73,7 @@ h1 {
   font-weight: 900;
   font-size: 40px;
   letter-spacing: 8px;
-  background: #00a5a5;
+  background: #18a68e;
   padding: 20px 0;
   margin: 0;
 }
@@ -84,7 +84,7 @@ h1 {
   font-size: 0;
   background: url("/img/jump2021.jpg") no-repeat;
   background-size: cover;
-  color: #00a5a5;
+  color: #18a68e;
 }
 
 header .row:before,
@@ -204,7 +204,7 @@ h3.offer {
 }
 
 .thanks-header {
-  background: url("/img/treepattern.jpg");
+  background: url("/img/flowerpattern.jpg");
   width: 100%;
   padding-top: 100px;
   margin-bottom: 100px;
@@ -247,7 +247,7 @@ h3.offer {
 }
 
 .goal-container {
-  background: url("/img/treepattern.jpg");
+  background: url("/img/flowerpattern.jpg");
   height: 100%;
   padding: 0;
   margin: 0;
@@ -321,8 +321,9 @@ h3.offer {
     display: block;
   }
 
-  header {
-    background-position: 50% 0;
+  header img {
+    max-height: 700px;
+    padding-top: 100px;
   }
 
   .giftbox {
