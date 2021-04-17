@@ -69,11 +69,11 @@ def send_thanks
   
         <p>Blessings,</p>
   
-        <p>Joe Canney<br>
+        <p>Joe Canney<br/>
         Head of School</p>
   
-        <p>PS - You can keep up with the progress at http://grow-ncs.org/goal</p>
-  
+        <p>PS - You can keep up with the progress at http://grow-ncs.org/goal</p><br/><br/><br/>"
+        
       end
     end  
 end
