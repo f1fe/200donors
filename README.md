@@ -1,4 +1,4 @@
-A thing for GOAT.
+A thing for New Covenant School.
 ===
 What if we can give one person to give each amount from $1 to $200? Then we can (hopefully) raise $20,100 quickly and without a single person having to contribute more than $200
 

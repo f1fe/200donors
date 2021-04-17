@@ -40,45 +40,40 @@ def send_thanks
 
     # fix this... need to get the customer.email
     to customer.email
-    from 'Ryan McCrary <ryan@goattrips.org>'
+    from 'Joe Canney, New Covenant School <school@newcovschool.net>'
     subject 'Grow NCS!'
       text_part do
-        body "Thank you so much for participating in GOAT Christmas! We're constantly amazed at the generosity of each of you who make GOAT possible for the kids that we serve.
+        body "Thank you so much for participating in Grow NCS! New Covenant School partners with Christian parents and the local church to help fulfill the call to make Christ-like disciples of God’s children (Colossians 1:28). We're constantly amazed at the generosity of each of you who are committed to this vision.
   
-        We hope you'll share this with your friends and family and help us finish this fundraiser out before the end of the year.
+        We hope you'll share this with your friends and family and help us finish this fundraiser before the end of the school year.
+    
+        Thanks again, and please let me know if you have any questions our school.
   
-        As a way of saying thanks, we'd love for you to pick out something you like in the GOAT shop (http://goattrips.org/shop) and use the coupon 2017christmas so we can send it free. Don't feel bad about it - we actually pay our GOAT students to help ship orders, so you're helping them out by ordering free stuff!
+        Blessings,
   
-        You'll also recieve a tax receipt first thing next year!
+        Joe Canney
+        Head of School
   
-        Thanks again so much, and please let us know if you have any questions about GOAT or GOAT Christmas!
-  
-        Merry Christmas!
-  
-        Ryan & The GOAT Team
-  
-        PS - You can keep up with the progress at http://www.goatchristmas.com/goal
+        PS - You can keep up with the progress at http://grow-ncs.org/goal
   
   
         "
       end
       html_part do
         content_type 'text/html; charset=UTF-8'
-        body "<p>Thank you so much for participating in GOAT Christmas! We're constantly amazed at the generosity of each of you who make GOAT possible for the kids that we serve.</p>
+        body "<p>Thank you so much for participating in Grow NCS! New Covenant School partners with Christian parents and the local church to help fulfill the call to make Christ-like disciples of God’s children (Colossians 1:28). We're constantly amazed at the generosity of each of you who are committed to this vision.</p>
   
-        <p>We hope you'll share this with your friends and family and help us finish this fundraiser out before the end of the year.</p>
+        <p>We hope you'll share this with your friends and family and help us finish this fundraiser before the end of the school year.</p>
+
+        <p>Thanks again, and please let me know if you have any questions our school.</p>
   
-        <p>As a way of saying thanks, we'd love for you to pick out something you like in the GOAT shop (http://goattrips.org/shop) and use the coupon <b>2017christmas</b> so we can send it free. Don't feel bad about it - we actually pay our GOAT students to help ship orders, so you're helping them out by ordering free stuff!</p>
+        <p>Blessings,</p>
   
-        <p>We'll also be sending you a small thank you in the following weeks, so keep an eye on your mailbox. You'll also recieve a tax receipt first thing next year!</p>
+        <p>Joe Canney<br>
+        Head of School</p>
   
-        <p>Thanks again so much, and please let us know if you have any questions about GOAT or GOAT Christmas!</p>
+        <p>PS - You can keep up with the progress at http://grow-ncs.org/goal</p>
   
-        <p>Merry Christmas!</p>
-  
-        <p>Ryan & The GOAT Team</p>
-  
-        <p>PS - You can keep up with the progress at http://www.goatchristmas.com/goal</p><br /><br /><br />"
       end
     end  
 end
@@ -113,7 +108,7 @@ post '/checkout' do
       price_data: {
         currency: 'usd',
         product_data: {
-          name: 'Grow NCS',
+          name: 'Grow NCS!',
         },
         unit_amount: @donation.amount*100,
       },
