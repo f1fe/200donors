@@ -82,7 +82,8 @@ h1 {
   max-width: 1184px;
   margin: 0 auto;
   font-size: 0;
-  background: url("/img/jump2021.jpg") no-repeat;
+  background: url("/img/200-2021.jpg");
+  background-size: contain;
   color: #18a68e;
 }
 
